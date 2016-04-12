@@ -511,13 +511,23 @@ TerminalShell.commands['help'] = TerminalShell.commands['halp'] = function(termi
 }; 
 
 
+//Yuanzhi's job begins here
 TerminalShell.commands['link'] = function(terminal, what) {
 	if (what == "nest") {
-			win = window.open("https://home.nest.com/login/oauth2?client_id=4dda29c4-aff0-4b22-aae6-0559d1464205&state=STATE")
-	} else {
+			//win = window.open("https://home.nest.com/login/oauth2?client_id=4dda29c4-aff0-4b22-aae6-0559d1464205&state=STATE",'_self')
+//var oDiv = document.createElement('div3');
+  //  oDiv.innerHTML='<object type="type/html" data="https://home.nest.com/login/oauth2?client_id=4dda29c4-aff0-4b22-aae6-0559d1464205&state=STATE" ></object>';
+	//document.getElementById("display").innerHTML='<object type="text/html" data="ḧttps://home.nest.com/login/oauth2?client_id=4dda29c4-aff0-4b22-aae6-0559d1464205&state=STATE" ></object>';
+	terminal.print($('<iframe src="https://home.nest.com/login/oauth2?client_id=4dda29c4-aff0-4b22-aae6-0559d1464205&state=STATE" height="800" width="400" scrolling="no" frameborder="0"></iframe>'));
+    //document.body.appendChild(oDiv);
+		
+    //oDiv.window.location.assign("https://home.nest.com/login/oauth2?client_id=4dda29c4-aff0-4b22-aae6-0559d1464205&state=STATE") 
+} else {
 		terminal.print('sorry, we cant link you there');
 	}
 };
+
+//And ends here
 
 TerminalShell.fallback = function(terminal, cmd) {
 	oneliners = {
